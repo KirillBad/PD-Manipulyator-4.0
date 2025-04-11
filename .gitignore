@@ -6,5 +6,7 @@ yolo.engine
 node_modules
 .prettierrc
 app/media/input/*
+!app/media/input/example.jpg
 app/media/output/*
+!app/media/output/processed_example.jpg
 app/.env

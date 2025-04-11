@@ -8,7 +8,6 @@ ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg", "gif"}
 
 
 def uid():
-
     return str(uuid.uuid4())
 
 
