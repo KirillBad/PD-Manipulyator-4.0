@@ -1,0 +1,10 @@
+__pycache__
+venv
+yolo.pt
+detr.pt
+yolo.engine
+node_modules
+.prettierrc
+app/media/input/*
+app/media/output/*
+app/.env

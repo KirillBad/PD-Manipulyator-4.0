@@ -1,0 +1,60 @@
+{% extends "base.html" %} {% block content %}
+<form method="POST" action="{{ url_for('object_detection') }}" enctype="multipart/form-data" class="mb-auto">
+  <section class="flex flex-col items-center" id="content">
+    <div class="w-32">
+      <div class="form-control">
+        <label class="label cursor-pointer">
+          <span class="text-lg">Фото</span>
+          <input
+            type="radio"
+            value="image"
+            name="content"
+            class="radio checked:bg-accent"
+            checked="checked"
+            id="radio-photo"
+          />
+        </label>
+      </div>
+      <div class="form-control">
+        <label class="label cursor-pointer">
+          <span class="text-lg">Видео</span>
+          <input type="radio" value="video" name="content" class="radio checked:bg-accent" id="radio-video" />
+        </label>
+      </div>
+      <div class="form-control">
+        <label class="label cursor-pointer">
+          <span class="text-lg">Камера</span>
+          <input type="radio" value="camera" name="content" class="radio checked:bg-accent" id="radio-camera" />
+        </label>
+      </div>
+    </div>
+    <label class="form-control w-80">
+      <div class="label">
+        <span class="label-text">Модель ИИ</span>
+      </div>
+      <select class="select select-bordered" name="model">
+        <option value="RTDETR">RTDETR</option>
+        <option value="YOLO">YOLO</option>
+      </select>
+    </label>
+    <input
+      type="file"
+      class="file-input file-input-bordered mt-4 w-80"
+      accept=".jpg, .jpeg"
+      name="file"
+      id="file-input"
+    />
+    <img
+      src="{{ url_for('static', filename='assets/placeholder.png') }}"
+      data-placeholder="{{ url_for('static', filename='assets/placeholder.png') }}"
+      alt=""
+      class="mt-4 h-96 w-96 rounded-2xl border-2 border-neutral"
+      id="content-display"
+    />
+    <button class="btn btn-outline btn-lg mt-4" id="start-button">Запустить</button>
+  </section>
+</form>
+{% endblock %} {% block scripts %}
+<script src="{{ url_for('static', filename='javascript/display_content.js') }}"></script>
+<script src="{{ url_for('static', filename='javascript/fetch.js') }}"></script>
+{% endblock %}
