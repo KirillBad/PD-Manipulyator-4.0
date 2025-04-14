@@ -1,9 +1,10 @@
-from transformers import DetrForObjectDetection, DetrImageProcessor
 import torch
 from PIL import Image
+from transformers import DetrForObjectDetection, DetrImageProcessor
+
 model_name = "facebook/detr-resnet-50"
 detr_model = DetrForObjectDetection.from_pretrained(model_name)
-weights_path = "last.pt"
+weights_path = "detr.pt"
 state_dict = torch.load(weights_path, map_location="cpu", weights_only=False)
 detr_model.load_state_dict(state_dict)
 detr_model.eval()

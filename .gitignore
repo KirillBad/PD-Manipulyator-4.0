@@ -10,3 +10,4 @@ app/media/input/*
 app/media/output/*
 !app/media/output/processed_example.jpg
 app/.env
+.ruff_cache
