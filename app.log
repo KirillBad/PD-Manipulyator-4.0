@@ -1,0 +1,151 @@
+[2025-04-28 13:34:50,223] INFO in font_manager: Failed to extract font properties from /usr/share/fonts/cantarell/Cantarell-VF.otf: Can not load face (SFNT font table missing; error code 0x8e)
+[2025-04-28 13:34:50,236] INFO in font_manager: generated new fontManager
+[2025-04-28 13:34:52,694] ERROR in object_detection: Failed to initialize models: [Errno 2] No such file or directory: '/home/kirillbad/Programming/PD-Manipulyator-4.0/detr.pt'
+Traceback (most recent call last):
+  File "/home/kirillbad/Programming/PD-Manipulyator-4.0/app/object_detection.py", line 17, in __init__
+    detr_model = RTDETR(os.path.abspath("detr.pt"))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kirillbad/Programming/PD-Manipulyator-4.0/.venv/lib/python3.12/site-packages/ultralytics/models/rtdetr/model.py", line 37, in __init__
+    super().__init__(model=model, task="detect")
+  File "/home/kirillbad/Programming/PD-Manipulyator-4.0/.venv/lib/python3.12/site-packages/ultralytics/engine/model.py", line 145, in __init__
+    self._load(model, task=task)
+  File "/home/kirillbad/Programming/PD-Manipulyator-4.0/.venv/lib/python3.12/site-packages/ultralytics/engine/model.py", line 285, in _load
+    self.model, self.ckpt = attempt_load_one_weight(weights)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kirillbad/Programming/PD-Manipulyator-4.0/.venv/lib/python3.12/site-packages/ultralytics/nn/tasks.py", line 910, in attempt_load_one_weight
+    ckpt, weight = torch_safe_load(weight)  # load ckpt
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kirillbad/Programming/PD-Manipulyator-4.0/.venv/lib/python3.12/site-packages/ultralytics/nn/tasks.py", line 837, in torch_safe_load
+    ckpt = torch.load(file, map_location="cpu")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kirillbad/Programming/PD-Manipulyator-4.0/.venv/lib/python3.12/site-packages/ultralytics/utils/patches.py", line 86, in torch_load
+    return _torch_load(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kirillbad/Programming/PD-Manipulyator-4.0/.venv/lib/python3.12/site-packages/torch/serialization.py", line 1479, in load
+    with _open_file_like(f, "rb") as opened_file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kirillbad/Programming/PD-Manipulyator-4.0/.venv/lib/python3.12/site-packages/torch/serialization.py", line 759, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kirillbad/Programming/PD-Manipulyator-4.0/.venv/lib/python3.12/site-packages/torch/serialization.py", line 740, in __init__
+    super().__init__(open(name, mode))
+                     ^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kirillbad/Programming/PD-Manipulyator-4.0/detr.pt'
+
+[2025-04-28 13:43:37,065] ERROR in object_detection: Failed to initialize models: No module named 'dill'
+Traceback (most recent call last):
+  File "/home/kirillbad/Programming/PD-Manipulyator-4.0/.venv/lib/python3.12/site-packages/ultralytics/nn/tasks.py", line 837, in torch_safe_load
+    ckpt = torch.load(file, map_location="cpu")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kirillbad/Programming/PD-Manipulyator-4.0/.venv/lib/python3.12/site-packages/ultralytics/utils/patches.py", line 86, in torch_load
+    return _torch_load(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kirillbad/Programming/PD-Manipulyator-4.0/.venv/lib/python3.12/site-packages/torch/serialization.py", line 1525, in load
+    return _load(
+           ^^^^^^
+  File "/home/kirillbad/Programming/PD-Manipulyator-4.0/.venv/lib/python3.12/site-packages/torch/serialization.py", line 2114, in _load
+    result = unpickler.load()
+             ^^^^^^^^^^^^^^^^
+  File "/home/kirillbad/Programming/PD-Manipulyator-4.0/.venv/lib/python3.12/site-packages/torch/serialization.py", line 2103, in find_class
+    return super().find_class(mod_name, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'dill'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kirillbad/Programming/PD-Manipulyator-4.0/app/object_detection.py", line 17, in __init__
+    detr_model = RTDETR(os.path.abspath("detr.pt"))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kirillbad/Programming/PD-Manipulyator-4.0/.venv/lib/python3.12/site-packages/ultralytics/models/rtdetr/model.py", line 37, in __init__
+    super().__init__(model=model, task="detect")
+  File "/home/kirillbad/Programming/PD-Manipulyator-4.0/.venv/lib/python3.12/site-packages/ultralytics/engine/model.py", line 145, in __init__
+    self._load(model, task=task)
+  File "/home/kirillbad/Programming/PD-Manipulyator-4.0/.venv/lib/python3.12/site-packages/ultralytics/engine/model.py", line 285, in _load
+    self.model, self.ckpt = attempt_load_one_weight(weights)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kirillbad/Programming/PD-Manipulyator-4.0/.venv/lib/python3.12/site-packages/ultralytics/nn/tasks.py", line 910, in attempt_load_one_weight
+    ckpt, weight = torch_safe_load(weight)  # load ckpt
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kirillbad/Programming/PD-Manipulyator-4.0/.venv/lib/python3.12/site-packages/ultralytics/nn/tasks.py", line 857, in torch_safe_load
+    ckpt = torch.load(file, map_location="cpu")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kirillbad/Programming/PD-Manipulyator-4.0/.venv/lib/python3.12/site-packages/ultralytics/utils/patches.py", line 86, in torch_load
+    return _torch_load(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kirillbad/Programming/PD-Manipulyator-4.0/.venv/lib/python3.12/site-packages/torch/serialization.py", line 1525, in load
+    return _load(
+           ^^^^^^
+  File "/home/kirillbad/Programming/PD-Manipulyator-4.0/.venv/lib/python3.12/site-packages/torch/serialization.py", line 2114, in _load
+    result = unpickler.load()
+             ^^^^^^^^^^^^^^^^
+  File "/home/kirillbad/Programming/PD-Manipulyator-4.0/.venv/lib/python3.12/site-packages/torch/serialization.py", line 2103, in find_class
+    return super().find_class(mod_name, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'dill'
+
+[2025-04-28 13:44:15,383] INFO in object_detection: Initializing inference on CPU
+[2025-04-28 13:44:17,062] INFO in object_detection: Initializing inference on CPU
+[2025-04-28 13:44:45,397] INFO in routes: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 got home page from 127.0.0.1
+[2025-04-28 13:44:52,825] INFO in routes: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 127.0.0.1 started image processing
+[2025-04-28 13:44:56,136] INFO in object_detection: Processed image with RTDETR in 402.36496925354004 seconds
+[2025-04-28 13:45:52,236] INFO in routes: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 127.0.0.1 started image processing
+[2025-04-28 13:45:53,220] INFO in object_detection: Processed image with RTDETR in 947.7496147155762 seconds
+[2025-04-28 13:46:49,982] INFO in object_detection: Initializing inference on CPU
+[2025-04-28 13:46:50,198] INFO in routes: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 127.0.0.1 started image processing
+[2025-04-28 13:46:51,437] INFO in object_detection: Processed image with RTDETR in 387.4244689941406 seconds
+[2025-04-28 13:51:32,420] INFO in object_detection: Initializing inference on CPU
+[2025-04-28 13:51:53,277] INFO in routes: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 got home page from 127.0.0.1
+[2025-04-28 13:52:00,443] INFO in routes: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 127.0.0.1 started image processing
+[2025-04-28 13:52:02,647] INFO in object_detection: Processed image with RTDETR in 394.06585693359375 seconds
+[2025-04-28 13:52:21,813] INFO in routes: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 127.0.0.1 started image processing
+[2025-04-28 13:52:22,827] INFO in object_detection: Processed image with RTDETR in 955.5799961090088 seconds
+[2025-04-28 14:02:32,459] ERROR in object_detection: Failed to initialize models: [Errno 2] No such file or directory: '/home/kirillbad/Programming/PD-Manipulyator-4.0/yolo.pt'
+Traceback (most recent call last):
+  File "/home/kirillbad/Programming/PD-Manipulyator-4.0/app/object_detection.py", line 22, in __init__
+    yolo_model = YOLO(os.path.abspath("yolo.pt"), task="detect")
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kirillbad/Programming/PD-Manipulyator-4.0/.venv/lib/python3.12/site-packages/ultralytics/models/yolo/model.py", line 23, in __init__
+    super().__init__(model=model, task=task, verbose=verbose)
+  File "/home/kirillbad/Programming/PD-Manipulyator-4.0/.venv/lib/python3.12/site-packages/ultralytics/engine/model.py", line 145, in __init__
+    self._load(model, task=task)
+  File "/home/kirillbad/Programming/PD-Manipulyator-4.0/.venv/lib/python3.12/site-packages/ultralytics/engine/model.py", line 285, in _load
+    self.model, self.ckpt = attempt_load_one_weight(weights)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kirillbad/Programming/PD-Manipulyator-4.0/.venv/lib/python3.12/site-packages/ultralytics/nn/tasks.py", line 910, in attempt_load_one_weight
+    ckpt, weight = torch_safe_load(weight)  # load ckpt
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kirillbad/Programming/PD-Manipulyator-4.0/.venv/lib/python3.12/site-packages/ultralytics/nn/tasks.py", line 837, in torch_safe_load
+    ckpt = torch.load(file, map_location="cpu")
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kirillbad/Programming/PD-Manipulyator-4.0/.venv/lib/python3.12/site-packages/ultralytics/utils/patches.py", line 86, in torch_load
+    return _torch_load(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kirillbad/Programming/PD-Manipulyator-4.0/.venv/lib/python3.12/site-packages/torch/serialization.py", line 1479, in load
+    with _open_file_like(f, "rb") as opened_file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kirillbad/Programming/PD-Manipulyator-4.0/.venv/lib/python3.12/site-packages/torch/serialization.py", line 759, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kirillbad/Programming/PD-Manipulyator-4.0/.venv/lib/python3.12/site-packages/torch/serialization.py", line 740, in __init__
+    super().__init__(open(name, mode))
+                     ^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/kirillbad/Programming/PD-Manipulyator-4.0/yolo.pt'
+
+[2025-04-28 14:03:18,636] INFO in object_detection: Initializing inference on CPU
+[2025-04-28 14:03:20,277] INFO in object_detection: Initializing inference on CPU
+[2025-04-28 14:03:22,744] INFO in routes: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 127.0.0.1 started image processing
+[2025-04-28 14:03:24,717] INFO in object_detection: Processed image with RTDETR in 507.8883171081543 seconds
+[2025-04-28 14:05:24,288] INFO in object_detection: Initializing inference on CPU
+[2025-04-28 14:05:26,600] INFO in routes: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 127.0.0.1 started image processing
+[2025-04-28 14:05:28,464] INFO in object_detection: Processed image with RTDETR in 397.8772163391113 seconds
+[2025-04-28 14:06:55,730] INFO in routes: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 127.0.0.1 started image processing
+[2025-04-28 14:06:56,445] INFO in object_detection: Processed image with RTDETR in 661.0419750213623 seconds
+[2025-04-28 14:07:15,396] INFO in object_detection: Initializing inference on CPU
+[2025-04-28 14:07:15,660] INFO in routes: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 127.0.0.1 started image processing
+[2025-04-28 14:07:16,937] INFO in object_detection: Processed image with RTDETR in 382.23814964294434 seconds
+[2025-04-28 14:07:30,769] INFO in routes: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 127.0.0.1 started image processing
+[2025-04-28 14:07:31,745] INFO in object_detection: Processed image with RTDETR in 943.1264400482178 seconds
+[2025-04-28 14:08:43,475] INFO in object_detection: Initializing inference on CPU
+[2025-04-28 14:08:58,940] INFO in routes: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 127.0.0.1 started image processing
+[2025-04-28 14:09:00,664] INFO in object_detection: Processed image with RTDETR in 388.3323669433594 seconds

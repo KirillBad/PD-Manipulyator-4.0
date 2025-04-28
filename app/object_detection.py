@@ -102,6 +102,27 @@ class ObjectDetection:
 
             result = selected_model(input_path)
             handled_result = result[0].plot()
+            
+            detections_info = []
+            for detection in result[0]:
+                box = detection.boxes.xyxy[0].tolist() if hasattr(detection.boxes, 'xyxy') else detection.boxes[0].tolist()
+                class_id = detection.boxes.cls[0].item()
+                class_name = result[0].names[class_id]
+                confidence = detection.boxes.conf[0].item()
+                
+                detections_info.append({
+                    "class": class_name,
+                    "confidence": float(confidence),
+                    "coordinates": {
+                        "xmin": float(box[0]),
+                        "ymin": float(box[1]),
+                        "xmax": float(box[2]),
+                        "ymax": float(box[3])
+                    }
+                })
+
+            print(detections_info)
+
             output_path = os.path.join(self.output_dir, f"processed_{filename}")
             cv2.imwrite(output_path, handled_result)
 
