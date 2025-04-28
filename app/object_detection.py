@@ -105,7 +105,7 @@ class ObjectDetection:
             
             detections_info = []
             for detection in result[0]:
-                box = detection.boxes.xyxy[0].tolist() if hasattr(detection.boxes, 'xyxy') else detection.boxes[0].tolist()
+                box = detection.boxes.xyxyn[0].tolist()
                 class_id = detection.boxes.cls[0].item()
                 class_name = result[0].names[class_id]
                 confidence = detection.boxes.conf[0].item()
